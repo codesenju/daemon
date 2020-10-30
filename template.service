@@ -1,0 +1,16 @@
+[Unit]
+Description=nexus service
+After=network.target
+
+[Service]
+Type=forking
+LimitNOFILE=65536
+ExecStart=/opt/nexus/nexus-3.28.0-01/bin/nexus start
+ExecStop=/opt/nexus/nexus-3.28.0-01/bin/nexus stop
+User=nexus
+Restart=always
+RestartSec=10
+TimeoutSec=600
+
+[Install]
+WantedBy=multi.user.target
