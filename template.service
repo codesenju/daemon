@@ -1,13 +1,12 @@
 [Unit]
-Description=nexus service
+Description=<service name>
 After=network.target
 
 [Service]
 Type=forking
-LimitNOFILE=65536
-ExecStart=/opt/nexus/nexus-3.28.0-01/bin/nexus start
-ExecStop=/opt/nexus/nexus-3.28.0-01/bin/nexus stop
-User=nexus
+ExecStart=<path to start script>
+ExecStop=<path to stop script>
+User=<user that will run the service>
 Restart=always
 RestartSec=10
 TimeoutSec=600
