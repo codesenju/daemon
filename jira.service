@@ -1,0 +1,16 @@
+[Unit]
+Description=Atlassian Jira Issue Tracking/Project Management Software
+After=network.target
+
+[Service]
+Type=forking
+
+ExecStart=/opt/jira/atlassian-jira-software-8.11.0-standalone/bin/start-jira.sh
+ExecStop=/opt/jira/atlassian-jira-software-8.11.0-standalone/bin/stop-jira.sh
+
+User=jira
+RestartSec=10
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

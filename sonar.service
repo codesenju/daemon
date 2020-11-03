@@ -1,0 +1,12 @@
+[Unit]
+Description=SonarQube
+After=network.target
+
+[Service]
+Type=forking
+User=sonar
+ExecStart=/opt/sonar/sonarqube-8.4.2.36762/bin/linux-x86-64/sonar.sh console
+ExecStop=/opt/sonar/sonarqube-8.4.2.36762/bin/linux-x86-64/sonar.sh stop
+
+[Install]
+WantedBy=multi-user.target
